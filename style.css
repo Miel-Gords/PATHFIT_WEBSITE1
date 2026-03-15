@@ -1,0 +1,123 @@
+/* General Styles & Accessibility */
+:root {
+    --primary-color: #8B0000; /* Dark Red for Martial Arts feel */
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+}
+
+h1, h2, h3 { 
+    color: var(--primary-color); 
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.856);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 { 
+    color: white; 
+    margin: 0; 
+}
+
+nav { 
+    margin-top: 10px; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover { 
+    text-decoration: underline; 
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.section-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Grid for 12 Strikes */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: var(--secondary-color);
+    padding: 15px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Flexbox for Stance & Grip */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Video Section */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
