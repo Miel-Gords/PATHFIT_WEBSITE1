@@ -116,8 +116,92 @@ nav a:hover {
 /* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: rgb(255, 169, 169);
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5a0000; /* A darker shade of red for the hover effect */
+    color: white;
+    text-decoration: none;
+}
+
+/* Member Slider Styles */
+.slider-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 20px 10px;
+    scroll-snap-type: x mandatory; /* Makes the scrolling snap to items */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
+
+.slider-item {
+    flex: 0 0 250px; /* Forces each card to be exactly 250px wide */
+    scroll-snap-align: center; /* Snaps the card to the center of the view */
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary-color);
+}
+
+/* Custom Scrollbar for the Slider */
+.slider-container::-webkit-scrollbar {
+    height: 10px;
+}
+.slider-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+.slider-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+.section-box {
+    /* Lower the last number (0.6) to make it more transparent */
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer with a white border box */
+#footer1 {
+    background-color: #333;
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    
+    /* Adds a solid white outline box around the footer */
+    border: 2px solid white; 
+}
+
+footer {
+    background-color: #333;
+    color: rgb(0, 0, 0); 
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    
+    /* Adds a solid white outline box around the footer */
+    border: 2px solid white; 
 }
