@@ -3,101 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pathfit 4: The Art of Arnis</title>
+    <title>Modern Arnis Hub | Claymorphism</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
-    <header>
-        <div class="container">
-            <h1>Pathfit 4: The Art of Arnis</h1>
-            <p>Philippine National Martial Art & Sport</p>
-            <nav>
-                <a href="#grip-stance">Grip & Stance</a>
-                <a href="#strikes">12 Strikes</a>
-                <a href="#blocks">Blocking</a>
-                <a href="#footwork">Footwork</a>
-            </nav>
+<body class="light-mode">
+    
+    <header class="clay-header">
+        <div class="header-title-group">
+            <img src="images/SSULOGO.PNG" alt="Arnis Logo" class="site-logo">
+            <h1>Learn Arnis Martial Arts</h1>
+        </div>
+        
+        <div class="kebab-menu-container">
+            <button id="kebab-btn" class="kebab-btn">&#8942;</button>
+            <div id="kebab-dropdown" class="clay-dropdown hidden">
+                <button onclick="openModal('members-modal')">Members & Instructor</button>
+                <button onclick="openModal('why-modal')">Info</button>
+                <button id="theme-toggle">Toggle Dark/Light Mode</button>
+                <button onclick="openModal('credits-modal')">Credits</button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
+        <section class="clay-card accent-cyan">
+            <h2>History of Arnis</h2>
+            <p>Arnis, also known as Kali or Eskrima, is the national martial art of the Philippines. Its origins trace back to indigenous populations using bladed weapons and sticks for self-defense and combat. Over centuries, it evolved through Spanish colonization, masking its deadly techniques within traditional dances. Today, it is recognized globally for its speed, agility, and practical self-defense applications.</p>
+        </section>
 
-        <section id="grip-stance" class="section-box flex-container">
-            <div class="flex-box">
-                <h2>Basic Grip</h2>
-                <p>The correct grip is essential for control and power. Hold the cane about one fist away from the base (the <em>punyo</em>). Your fingers should wrap firmly around the stick, with your thumb overlapping your index and middle fingers. Keep your wrist relaxed but firm.</p>
-                <img src="Pictures\BasicGrip.jpeg"alt="A close up of the proper hand grip on an Arnis cane">
+        <section class="basics-grid">
+            
+            <div class="clay-card accent-pink">
+                <h3>6 Basic Fighting Stances</h3>
+                <p>Click on any stance to see its details.</p>
+                <div class="strikes-grid" id="stances-grid"></div>
             </div>
             
-            <div class="flex-box">
-                <h2>Basic Fighting Stance</h2>
-                <p>A good stance provides balance and mobility. Stand with your feet shoulder-width apart. Step your dominant foot forward slightly. Bend your knees to lower your center of gravity. Keep your weapon hand up and ready, and your live hand (empty hand) close to your chest for checking and blocking.</p>
-                <img src="Pictures\BasicFightingStance.jpg" alt="A person demonstrating the basic fighting stance in Arnis">
+            <div class="clay-card accent-green">
+                <h3>Basic Grip</h3>
+                <img src="images/BG.avif" alt="Basic Grip" class="clay-img">
+                <p>Hold the stick about one fist-length away from the bottom edge (the punyo). Grip it firmly but not rigidly, wrapping your fingers around the stick with your thumb locked over your index finger.</p>
+            </div>
+
+            <div class="clay-card accent-cyan">
+                <h3>5 Basic Blocking Techniques</h3>
+                <p>Click on any block to see its details.</p>
+                <div class="strikes-grid" id="blocks-grid"></div>
+            </div>
+
+            <div class="clay-card accent-pink">
+                <h3>Basic Footwork</h3>
+                <img src="images/FW.jpg" alt="Footwork" class="clay-img">
+                <p>Footwork is the foundation of Arnis. The triangular footwork (V-step) allows you to evade attacks while positioning yourself for a counter-strike. Always maintain your balance center.</p>
             </div>
         </section>
 
-        <section id="strikes" class="section-box">
+        <section class="clay-card full-width accent-green">
             <h2>The 12 Striking Techniques</h2>
-            <p>Modern Arnis utilizes a standardized 12-strike system. Here is the breakdown of the target areas:</p>
-            <div class="grid-container">
-                <div class="grid-item"><strong>1. Left Temple Strike:</strong> Forehand strike to the opponent's left temple.</div>
-                <div class="grid-item"><strong>2. Right Temple Strike:</strong> Backhand strike to the opponent's right temple.</div>
-                <div class="grid-item"><strong>3. Left Shoulder Strike:</strong> Forehand strike to the left shoulder.</div>
-                <div class="grid-item"><strong>4. Right Shoulder Strike:</strong> Backhand strike to the right shoulder.</div>
-                <div class="grid-item"><strong>5. Stomach Thrust:</strong> Straight thrust to the midsection.</div>
-                <div class="grid-item"><strong>6. Left Chest Thrust:</strong> Thrust to the left side of the chest.</div>
-                <div class="grid-item"><strong>7. Right Chest Thrust:</strong> Thrust to the right side of the chest.</div>
-                <div class="grid-item"><strong>8. Right Knee Strike:</strong> Backhand strike to the lower leg/knee.</div>
-                <div class="grid-item"><strong>9. Left Knee Strike:</strong> Forehand strike to the lower leg/knee.</div>
-                <div class="grid-item"><strong>10. Left Eye Poke:</strong> Forward thrust targeting the left eye.</div>
-                <div class="grid-item"><strong>11. Right Eye Poke:</strong> Forward thrust targeting the right eye.</div>
-                <div class="grid-item"><strong>12. Crown Strike:</strong> Downward strike to the top of the head.</div>
-            </div>
-            <br>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/XYM1tv4fp5s?si=2-uIAxKfbuVQ5K3F" title="12 Striking Techniques Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p style="text-align: center; font-size: 0.9em; color: gray;"><em>Demonstration of the 12 strikes</em></p>
+            <p>Click on any technique to see its demonstration and details.</p>
+            <div class="strikes-grid" id="strikes-grid"></div>
         </section>
 
-        <section id="blocks" class="section-box">
-            <h2>Basic Blocking Techniques</h2>
-            <p>Defending against incoming strikes is just as important as attacking. The primary blocks include:</p>
-            <ul>
-                <li><strong>Inside Block:</strong> Defends against strikes to the left side of the body (e.g., Strike 1). The cane is held vertically, moving from right to left.</li>
-                <li><strong>Outside Block:</strong> Defends against strikes to the right side of the body (e.g., Strike 2). The cane moves from left to right.</li>
-                <li><strong>Downward Block:</strong> Used to defend against strikes to the lower body (knees). Can be performed forehand or backhand.</li>
-                <li><strong>Roof / Umbrella Block:</strong> Protects the head from downward strikes (e.g., Strike 12). The cane is held horizontally above the head.</li>
-            </ul>
-            <img src="Pictures\BasicBlocking.jpg" alt="Collage of inside, outside, and roof blocks">
-        </section>
-
-        <section id="footwork" class="section-box">
-            <h2>Basic Footwork</h2>
-            <p>In Arnis, footwork is the foundation of evasion and generating power. We utilize a triangular framework for movement.</p>
-            <div class="flex-container">
-                <div class="flex-box">
-                    <h3>Forward Triangle</h3>
-                    <p>Stepping forward at a 45-degree angle to the left or right to evade direct strikes while closing the distance to counter-attack.</p>
-                    <img src="Pictures\FTriangle.jpg" alt="Collage of inside, outside, and roof blocks">
-                </div>
-                <div class="flex-box">
-                    <h3>Reverse Triangle</h3>
-                    <p>Stepping backward at a 45-degree angle to create distance and draw the opponent in.</p>
-                    <img src="Pictures\RTriangle.jpg" alt="Collage of inside, outside, and roof blocks">
-                </div>
+        <section class="clay-card video-section">
+            <h2>Watch Arnis in Action</h2>
+            <div class="video-container clay-img">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EYXAkPAZLXc?si=aGZzmgmEXlbT0QSf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
+    </main>
 
-    </div>
-
-    <footer>
-        <section id="about-us" class="section-box" style="text-align: center;">
-            <h2>About the Creators</h2>
-            <p>This website was created as a group project for Pathfit 4.</p>
-            <a href="members.html" class="btn">Meet the Team</a>
-        </section>
+    <footer class="site-footer">
+        <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
 
+    <div id="info-modal" class="modal-overlay hidden">
+        <div class="clay-modal">
+            <span class="close-btn" onclick="closeModal('info-modal')">&times;</span>
+            <h2 id="info-title">Technique</h2>
+            <img id="info-img" src="" alt="Demonstration image" class="clay-img">
+            <p id="info-desc">Description</p>
+        </div>
+    </div>
+
+    <div id="members-modal" class="modal-overlay hidden">
+        <div class="clay-modal accent-cyan">
+            <span class="close-btn" onclick="closeModal('members-modal')">&times;</span>
+            <h2>Our Team</h2>
+            <div class="slider-container">
+                <div id="slide-content" class="slide clay-card accent-pink">
+                    <img id="member-img" src="" alt="Member" class="clay-img slider-img">
+                    <h3 id="member-role">Role</h3>
+                    <p id="member-name">Name</p>
+                </div>
+            </div>
+            <button id="next-slide-btn" class="clay-btn">Next Member</button>
+        </div>
+    </div>
+
+    <div id="why-modal" class="modal-overlay hidden">
+        <div class="clay-modal accent-pink">
+            <span class="close-btn" onclick="closeModal('why-modal')">&times;</span>
+            <h2>Why We Made This Website</h2>
+            <p>We created this website as an educational tool to help students easily learn and understand the basics of Arnis. Our goal is to provide a clear, interactive, and accessible platform where beginners can study the fundamental stances, blocks, and striking techniques of this traditional Filipino martial art.</p>
+        </div>
+    </div>
+
+    <div id="credits-modal" class="modal-overlay hidden">
+        <div class="clay-modal accent-green">
+            <span class="close-btn" onclick="closeModal('credits-modal')">&times;</span>
+            <h2>Credits</h2>
+            <ul>
+                <li><strong>Youtube Video:</strong> MATTI_San_Juan_Official@yt.com</li>
+                <li><strong>Striking Images:</strong> thestickchick.com</li>
+                <li><strong>Blocking Images:</strong> Chicolokoys@fb.com</li>
+                <li><strong>Stance Image:</strong> guerreroarnis.com</li>
+                <li><strong>Hand Grip Image:</strong> thestickchick.com</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

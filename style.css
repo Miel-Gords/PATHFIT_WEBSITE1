@@ -1,207 +1,245 @@
-/* General Styles & Accessibility */
 :root {
-    --primary-color: #8B0000; /* Dark Red for Martial Arts feel */
-    --secondary-color: #f4f4f4;
-    --text-color: #333;
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Geometric Font */
+    --font-main: 'Poppins', sans-serif;
+
+    /* Light Mode Variables */
+    --bg-color: #f4f7f6;
+    --text-color: #2c3e50;
+    --clay-bg: #e0e5ec;
+    --clay-shadow-outer: rgba(163, 177, 198, 0.6);
+    --clay-shadow-inner-light: rgba(255, 255, 255, 0.7);
+    --clay-shadow-inner-dark: rgba(163, 177, 198, 0.5);
+
+    /* Candy Colors */
+    --cyan-accent: #a3e4d7;
+    --pink-accent: #f5b7b1;
+    --green-accent: #abebc6;
+    
+    --neon-cyan: #00f0ff;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+}
+
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e5ec;
+    --clay-bg: #22223b;
+    --clay-shadow-outer: rgba(0, 0, 0, 0.8);
+    --clay-shadow-inner-light: rgba(255, 255, 255, 0.05);
+    --clay-shadow-inner-dark: rgba(0, 0, 0, 0.4);
+
+    --cyan-accent: #117864;
+    --pink-accent: #943126;
+    --green-accent: #1e8449;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: var(--font-main);
+    background-color: var(--bg-color);
     color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: var(--secondary-color);
 }
 
-h1, h2, h3 { 
-    color: var(--primary-color); 
+/* Logo and Title Alignment */
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between the logo and the text */
 }
 
-img { 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 8px; 
+/* Circular Logo Styling */
+.site-logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    object-fit: cover;
+    /* Adds a subtle Claymorphism shadow to the logo */
+    box-shadow: 
+        4px 4px 8px var(--clay-shadow-outer),
+        -4px -4px 8px rgba(255, 255, 255, 0.1);
+    border: 3px solid var(--clay-bg); /* Optional neat border */
 }
-
-/* Header & Navigation */
-header {
-    background-color: var(--primary-color);
-    color: rgba(255, 255, 255, 0.856);
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 { 
-    color: white; 
-    margin: 0; 
-}
-
-nav { 
-    margin-top: 10px; 
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover { 
-    text-decoration: underline; 
-}
-
-/* Layout */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.section-box {
-    background: white;
-    padding: 20px;
+/* Claymorphism Base */
+.clay-card, .clay-header, .clay-modal, .clay-btn, .clay-dropdown {
+    background: var(--clay-bg);
+    border-radius: 24px;
+    box-shadow: 
+        10px 10px 20px var(--clay-shadow-outer),
+        -10px -10px 20px rgba(255, 255, 255, 0.1),
+        inset 6px 6px 12px var(--clay-shadow-inner-light),
+        inset -6px -6px 12px var(--clay-shadow-inner-dark);
+    padding: 30px;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-/* Grid for 12 Strikes */
-.grid-container {
+/* Color Accents */
+.accent-cyan { background: var(--cyan-accent); }
+.accent-pink { background: var(--pink-accent); }
+.accent-green { background: var(--green-accent); }
+
+/* Layout Elements */
+header.clay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px 40px;
+}
+
+.kebab-menu-container { position: relative; }
+.kebab-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0 10px;
+}
+
+.clay-dropdown {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.clay-dropdown button {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    font-family: var(--font-main);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.clay-dropdown button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--neon-cyan);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.basics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.grid-item {
-    background: var(--secondary-color);
-    padding: 15px;
-    border-left: 5px solid var(--primary-color);
-    border-radius: 4px;
+.clay-img {
+    width: 100%;
+    border-radius: 16px;
+    margin: 15px 0;
+    box-shadow: 4px 4px 8px var(--clay-shadow-outer);
 }
 
-/* Flexbox for Stance & Grip */
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* 12 Strikes Section */
+.strikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.flex-box {
-    flex: 1;
-    min-width: 300px;
+.clay-btn {
+    border: none;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
 }
 
-/* Video Section */
+.clay-btn:hover {
+    transform: translateY(-2px);
+    color: var(--neon-pink);
+}
+
+/* Video Container */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 8px;
 }
-
 .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 16px;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: rgb(255, 169, 169);
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-}
-
-/* Button Styles */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #5a0000; /* A darker shade of red for the hover effect */
-    color: white;
-    text-decoration: none;
-}
-
-/* Member Slider Styles */
-.slider-container {
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    padding: 20px 10px;
-    scroll-snap-type: x mandatory; /* Makes the scrolling snap to items */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.slider-item {
-    flex: 0 0 250px; /* Forces each card to be exactly 250px wide */
-    scroll-snap-align: center; /* Snaps the card to the center of the view */
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-top: 5px solid var(--primary-color);
-}
-
-/* Custom Scrollbar for the Slider */
-.slider-container::-webkit-scrollbar {
-    height: 10px;
-}
-.slider-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 5px;
-}
-.slider-container::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-.section-box {
-    /* Lower the last number (0.6) to make it more transparent */
-    background: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Footer with a white border box */
-#footer1 {
-    background-color: #333;
-    color: rgb(255, 255, 255); 
+.clay-modal {
+    width: 90%;
+    max-width: 500px;
+    position: relative;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    
-    /* Adds a solid white outline box around the footer */
-    border: 2px solid white; 
 }
 
-footer {
-    background-color: #333;
-    color: rgb(0, 0, 0); 
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden { display: none !important; }
+
+/* Slider */
+.slider-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+
+/* Make popup images smaller and centered */
+#info-img {
+    max-width: 150px; /* Change this number to make it bigger or smaller */
+    height: auto;
+    margin: 15px auto; /* This keeps the image perfectly centered */
+    display: block;
+}
+
+/* Footer Styling */
+.site-footer {
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    
-    /* Adds a solid white outline box around the footer */
-    border: 2px solid white; 
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.7; /* Makes the text slightly faded so it's not too distracting */
 }
